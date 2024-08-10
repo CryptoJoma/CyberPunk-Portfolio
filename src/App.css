@@ -976,6 +976,11 @@ video {
     color: rgb(29 161 242/var(--tw-text-opacity))
 }
 
+.text-\[\#428BCA\] {
+    --tw-text-opacity: 1;
+    color: rgb(66 139 202);
+}
+
 .text-gray-400 {
     --tw-text-opacity: 1;
     color: rgb(156 163 175/var(--tw-text-opacity))
@@ -1164,6 +1169,10 @@ a {
 
 .hover\:border-\[\#5865F2\]\/50:hover {
     border-color: rgba(88, 101, 242, .5)
+}
+
+.hover\:border-\[\#428BCA\]\/50:hover {
+    border-color: rgb(66, 139, 202);
 }
 
 .hover\:border-\[\#1DA1F2\]\/50:hover {
