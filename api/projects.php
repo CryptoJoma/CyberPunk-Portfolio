@@ -1,20 +1,10 @@
 <?php
 header('Content-Type: application/json');
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "portfolio_website";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+// Include the database configuration file
+include 'config.php';
 
 $sql = "SELECT * FROM projects";
-$result = $conn->query($sql);
+$result = $db->query($sql);
 
 $projects = array();
 if ($result->num_rows > 0) {
