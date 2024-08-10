@@ -10,7 +10,7 @@ define('DBNAME', 'DB_NAME');
 // Telegram Bot Token
 define('TELEGRAM_BOT_TOKEN', 'TG_BOT_TOKEN');
 // Place your chat ID
-define('TELEGRAM_CHAT_ID', '499544358');
+define('TELEGRAM_CHAT_ID', 'TG_CHAT_TOKEN');
 
 // Include DB, Functions, Classes, and anything else
 include("archives/db.php");
