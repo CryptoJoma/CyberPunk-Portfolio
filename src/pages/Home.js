@@ -4,12 +4,33 @@ const Home = () => {
     return (
 
   <div class="mt-24 w-full" style={{opacity: 1, transform: "none"}}>
-    <h1 class="mt-36 font-bold text-4xl md:text-5xl mb-4">Hey, I'm <span class="transition-all duration-1000 text-violet-600">JomaDev</span> <span class="text-gray-400 sm:text-base text-sm italic sm:inline flex"> aka CryptoJoma</span><span class="pl-1 WavingEmoji_wave__jGgWQ" role="img" aria-label="wave">👋</span></h1>
-    <p class="text-gray-800 dark:text-gray-300 leading-6 tracking-wide mb-12">I'm Joma, a 27-year-old developer from Mexico! I have been interested in coding since a very young age.</p>
-    <h2 class="font-medium text-3xl mb-4">What I Love 💭</h2>
-    <p class="text-gray-800 dark:text-gray-300 leading-6 font-light tracking-wide mb-12">I am very passionate about everything and anything in technology. From designing and or developing software, to understanding how all of this stuff works, to cybersecurity, and programming. I love to learn about these types of things on a daily basis, and utilize my knowledge to further understand <i>how</i> or <i>why</i> the technology around us works.</p>
+    <h1 class="mt-36 font-bold text-4xl md:text-5xl mb-4">Howdy! I'm <span class="transition-all duration-1000 text-violet-600">Joma</span> <span class="text-gray-400 sm:text-base text-sm italic sm:inline flex"> aka CryptoJoma</span><span class="pl-1 WavingEmoji_wave__jGgWQ" role="img" aria-label="wave">👽</span></h1>
+    <p class="text-gray-800 dark:text-gray-300 leading-6 tracking-wide mb-12">
+      I'm a DevOps Engineer from Mexico! I have been interested in coding since a very young age.
+      <br />
+      Besides programming, I enjoy:
+      <ul>
+        <li c>
+          💪🏼 Do a lot of calisthenics
+        </li>
+        <li c>
+          ✍️ Writting Tech Blogs
+        </li>
+        <li c>
+          🎥 Watching Movies and Web Series
+        </li>
+        <li c>
+          🗣️ Learn a new language
+        </li>
+        <li c>
+          🔥 Play videogames
+        </li>
+      </ul>
+    </p>
+    <h2 class="font-medium text-3xl mb-4">What I'm Passionate About 💭</h2>
+    <p class="text-gray-800 dark:text-gray-300 leading-6 font-light tracking-wide mb-12">I have a deep enthusiasm for all aspects of technology. Whether it's designing and developing software, delving into cybersecurity, or exploring programming, I'm eager to learn every day. I enjoy applying my knowledge to better understand how and why the technology around us functions.</p>
     <h2 class="font-medium text-3xl mb-4">Technologies 💻</h2>
-    <p class="text-gray-800 dark:text-gray-300 leading-6 font-light tracking-wide mb-6">I use a variety of tools to streamline my development process and increase the quality of both my code, and my projects. Below is a list of technologies and languages I've had experience with in the past, or use currently.</p>
+    <p class="text-gray-800 dark:text-gray-300 leading-6 font-light tracking-wide mb-6">I utilize a range of tools to enhance my development workflow and improve the quality of my code and projects. Here is a compilation of the technologies and languages I've worked with previously or currently use.</p>
     <div class="w-full flex flex-wrap flex-row justify-center p-1 border border-slate-800 rounded-md bg-white/10 dark:bg-black/10">
       <li class="flex p-2">
         <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
