@@ -14,5 +14,6 @@ define('BOT_USERNAME', 'TG_BOT_USERNAME');
 
 // Include DB, Functions, Classes, and anything else
 include("archives/db.php");
+include("archives/functions.php");
 
 ?>
