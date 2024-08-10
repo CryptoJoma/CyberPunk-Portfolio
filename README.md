@@ -1,6 +1,5 @@
 <h2 align="center">
-  CyberPunk Portfolio - v0.1<br/>
-  <a href="https://joma.dev/" target="_blank">joma.dev</a>
+  CyberPunk Portfolio - v0.1
 </h2>
 <div align="center">
   <img alt="Demo" src="./Images/readme-img1.png" />
