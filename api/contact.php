@@ -1,19 +1,15 @@
 <?php
 header('Content-Type: application/json');
+include("config.php");
 
 $data = json_decode(file_get_contents("php://input"));
 
-$name = trim($data->name);
 $email = trim($data->email);
 $message = trim($data->message);
 
 $errors = [];
 $isValid = true;
 
-if (empty($name) || strlen($name) < 2) {
-    $errors['name'] = 'Name must be at least 2 characters long';
-    $isValid = false;
-}
 if (empty($email) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $errors['email'] = 'Please enter a valid email address';
     $isValid = false;
@@ -24,17 +20,19 @@ if (empty($message) || strlen($message) < 10) {
 }
 
 if ($isValid) {
-    $to = 'coffee@joma.dev';
-    $subject = 'Contact Form Submission';
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $botToken = TELEGRAM_BOT_TOKEN; // Replace with your bot token
+    $chatId = TELEGRAM_CHAT_ID;     // Replace with your chat ID
 
-    $body = "<p><strong>Name:</strong> $name</p>";
-    $body .= "<p><strong>Email:</strong> $email</p>";
-    $body .= "<p><strong>Message:</strong></p><p>$message</p>";
+    $text = "New Message:\n\n";
+    $text .= "Email: $email\n";
+    $text .= "Message:\n$message";
 
-    if (mail($to, $subject, $body, $headers)) {
+    $apiUrl = "https://api.telegram.org/bot$botToken/sendMessage?chat_id=$chatId&text=" . urlencode($text);
+
+    $response = file_get_contents($apiUrl);
+    $response = json_decode($response, true);
+
+    if ($response['ok']) {
         echo json_encode(['status' => 'success', 'message' => 'Message sent successfully.']);
     } else {
         echo json_encode(['status' => 'error', 'message' => 'Error sending message.']);
