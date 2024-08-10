@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import moment from 'moment-timezone';
 
 const Contact = () => {
+
+    // Set timezone to your local_time
+    const timezone = 'America/Regina';
+    const now = moment().tz(timezone);
+    const currentHour = now.hour();
+
+    // Determine the message based on the current time
+    const current_status = currentHour >= 9 && currentHour < 21
+    ? `awake`
+    : `sleeping`;
+
     const [formData, setFormData] = useState({ email: '', message: '' });
     const [errors, setErrors] = useState({ email: '', message: '' });
 
@@ -41,13 +53,13 @@ const Contact = () => {
 
     return (
       <div class="mt-36 w-full" style={{opacity: 1, transform: "none"}}>
-        <h1 class="text-black dark:text-white font-bold text-3xl mb-3 mt-8">Let's have a <span class="transition-all duration-1000 text-violet-600">chat</span> <span class="pl-1" role="img" aria-label="wave">💬</span></h1>
-        <p class="text-gray-800 dark:text-gray-200 mb-6">Have an inquiry, or want to connect? Feel free to leave a message below, or get in touch via discord, telegram, twitter, or email!</p>
-        <p class="text-black/50 dark:text-white/50 text-sm mb-10">It's currently <span class="font-semibold text-black/60 dark:text-white/60"> 4:09 P.M</span> for me, so I'm probably <span class="font-semibold text-black/60 dark:text-white/60">awake</span>. I'll get back to you as soon as possible!</p>
+        <h1 class="text-black dark:text-white font-bold text-3xl mb-3 mt-8">Let's <span class="transition-all duration-1000 text-violet-600">Chat</span> <span class="pl-1" role="img" aria-label="wave">💬</span></h1>
+        <p class="text-gray-800 dark:text-gray-200 mb-6">Have a question or want to connect? Drop a message below or reach out via Discord, Telegram, Twitter, or email!</p>
+        <p class="text-black/50 dark:text-white/50 text-sm mb-10">It's currently <span class="font-semibold text-black/60 dark:text-white/60"> {now.format('h:mm A')}</span> for me, so I’m likely <span class="font-semibold text-black/60 dark:text-white/60">{current_status}</span> and will respond as soon as I can!</p>
         <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4">
           <div class="md:col-span-2 h-auto min-h-[21.5rem] row-span-3 bg-opacity-50 bg-white dark:bg-white/5 rounded-md p-4 border border-zinc-800/50">
             <div style={{opacity: 1}}>
-              
+            <form onSubmit={handleSubmit}>
                 <h1 class="font-bold text-sm dark:text-slate-500 mb-1">EMAIL</h1>
                 <input
                     type="email"
@@ -76,7 +88,7 @@ const Contact = () => {
                     <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" class="ml-2" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 13.0001H9V11.0001H3V1.8457C3 1.56956 3.22386 1.3457 3.5 1.3457C3.58425 1.3457 3.66714 1.36699 3.74096 1.4076L22.2034 11.562C22.4454 11.695 22.5337 11.9991 22.4006 12.241C22.3549 12.3241 22.2865 12.3925 22.2034 12.4382L3.74096 22.5925C3.499 22.7256 3.19497 22.6374 3.06189 22.3954C3.02129 22.3216 3 22.2387 3 22.1544V13.0001Z"></path></svg>
                   </button>
                 </div>
-
+              </form>
             </div>
           </div>
           <div class="row-start-1 md:row-auto">

@@ -15,8 +15,8 @@ const Projects = () => {
 
     return (
       <div class="mt-36" style={{opacity: 1, transform: "none"}}>
-        <h1 class="text-black dark:text-white font-bold text-3xl mb-3 mt-8">All of my <span class="transition-all duration-1000 text-violet-600">projects</span> <span class="pl-1" role="img" aria-label="wave">🤖</span></h1>
-        <p class="text-gray-800 dark:text-gray-200 mb-6">Here is where you can find all of the projects that I have worked on that I want to be publicly known. I have worked on many projects, but these are the ones that I am most proud of.</p>
+        <h1 class="text-black dark:text-white font-bold text-3xl mb-3 mt-8">My <span class="transition-all duration-1000 text-violet-600">Project</span> Portfolio <span class="pl-1" role="img" aria-label="wave">🤖</span></h1>
+        <p class="text-gray-800 dark:text-gray-200 mb-6">Here you'll find a showcase of projects I've worked on that I want to share publicly. While I've been involved in many projects, these are the ones I'm most proud of.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4">
           {projects.map(project => (
             <div key={project.id} class="mt-4 md:w-[225px] w-full" style={{opacity: 1, transform: "none"}}>

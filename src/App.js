@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import PageNotFound from "./pages/PageNotFound"; // Error 404
 import Navbar from './components/Navbar';
 import './App.css';
 
@@ -16,6 +17,7 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<PageNotFound />} />
             </Routes>
             <div class="w-full flex flex-col items-start border-t-2 border-slate-800 px-4 py-8 dark:border-opacity-50 mt-10">
               <h1 class="text-black dark:text-white/50 text-2xl font-semibold">Joma</h1>
