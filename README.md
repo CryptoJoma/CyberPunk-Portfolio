@@ -1,5 +1,5 @@
 <h2 align="center">
-  CyberPunk Portfolio - v0.1
+  CyberPunk Portfolio - v0.2
 </h2>
 <div align="center">
   <img alt="Demo" src="./Images/readme-img1.png" />
