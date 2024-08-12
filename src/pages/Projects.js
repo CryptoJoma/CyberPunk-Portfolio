@@ -29,7 +29,7 @@ const Projects = () => {
           <title>{structuredData["name"]}</title>
           <meta name="description" content={structuredData["description"]} />
           <meta name="keywords" content="Joma, CryptoJoma, JomaDev, Portfolio, Web3, Smart Contracts, Blockchain" />
-          <link rel="canonical" href="%PUBLIC_URL%" />
+          <link rel="canonical" href={structuredData["url"]} />
           <meta property="og:title" content={structuredData["name"]} />
           <meta property="og:description" content={structuredData["description"]} />
           <meta property="og:url" content={structuredData["url"]} />
