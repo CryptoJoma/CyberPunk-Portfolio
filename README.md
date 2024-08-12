@@ -38,8 +38,9 @@ This project was built using these technologies.
 - Express.js
 - CSS3
 - VsCode
+- Tippy.js
 - Sitemap.js
-- React Helmet
+- Helmet.js
 
 ## Features
 
@@ -57,7 +58,8 @@ Clone down this repository. You will need `node.js` and `git` installed globally
 
 1. Installation: `npm install`
 2. In the project directory, you can run: `npm start`
-3. To export the project, you can run: `npm run build`
+3. Generate Sitemap.xml, you can run: `node sitemap.js`
+4. To export the project, you can run: `npm run build`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
