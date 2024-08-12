@@ -10,7 +10,8 @@ const Home = () => {
     "@type": "WebPage",
     "name": "JomaDev - Blockchain and Web3",
     "description": "DevOps Engineer from Mexico with a long-standing passion for coding.",
-    "url": "https://joma.dev"
+    "url": "https://joma.dev",
+    "image": "https://joma.dev/logo.png"
   };
   
     return (
@@ -20,11 +21,13 @@ const Home = () => {
       <title>{structuredData["name"]}</title>
       <meta name="description" content={structuredData["description"]} />
       <meta name="keywords" content="Joma, CryptoJoma, JomaDev, Portfolio, Web3, Smart Contracts, Blockchain" />
-      <link rel="canonical" href="%PUBLIC_URL%" />
+      <link rel="canonical" href={structuredData["url"]} />
       <meta property="og:title" content={structuredData["name"]} />
       <meta property="og:description" content={structuredData["description"]} />
       <meta property="og:url" content={structuredData["url"]} />
       <meta property="og:type" content="website" />
+      <meta property="og:image" content={structuredData["image"]} />
+      <meta name="twitter:image" content={structuredData["image"]} />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content={structuredData["url"]} />
       <meta name="twitter:title" content={structuredData["name"]} />

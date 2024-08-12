@@ -57,7 +57,8 @@ const Contact = () => {
       "@type": "WebPage",
       "name": "Contact - JomaDev",
       "description": "Have a question or want to connect? Drop a message below or reach out via Discord, Telegram, Twitter, or email!",
-      "url": "https://joma.dev/contact"
+      "url": "https://joma.dev/contact",
+      "image": "https://joma.dev/logo.png"
     };
 
     return (
@@ -71,6 +72,8 @@ const Contact = () => {
           <meta property="og:description" content={structuredData["description"]} />
           <meta property="og:url" content={structuredData["url"]} />
           <meta property="og:type" content="website" />
+          <meta property="og:image" content={structuredData["image"]} />
+          <meta name="twitter:image" content={structuredData["image"]} />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content={structuredData["url"]} />
           <meta name="twitter:title" content={structuredData["name"]} />

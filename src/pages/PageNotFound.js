@@ -7,7 +7,8 @@ const PageNotFound = () => {
     "@type": "WebPage",
     "name": "Error 404 - JomaDev",
     "description": "Page not available",
-    "url": "https://joma.dev/404"
+    "url": "https://joma.dev/404",
+    "image": "https://joma.dev/logo.png"
   };
 
   return (
@@ -21,6 +22,8 @@ const PageNotFound = () => {
         <meta property="og:description" content={structuredData["description"]} />
         <meta property="og:url" content={structuredData["url"]} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={structuredData["image"]} />
+        <meta name="twitter:image" content={structuredData["image"]} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:site" content={structuredData["url"]} />
         <meta name="twitter:title" content={structuredData["name"]} />

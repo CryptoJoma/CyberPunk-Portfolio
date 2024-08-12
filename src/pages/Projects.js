@@ -19,7 +19,8 @@ const Projects = () => {
       "@type": "WebPage",
       "name": "Projects - JomaDev",
       "description": "Here you'll find a showcase of projects I've worked on that I want to share publicly. While I've been involved in many projects, these are the ones I'm most proud of.",
-      "url": "https://joma.dev/projects"
+      "url": "https://joma.dev/projects",
+      "image": "https://joma.dev/logo.png"
     };
 
     return (
@@ -33,6 +34,8 @@ const Projects = () => {
           <meta property="og:description" content={structuredData["description"]} />
           <meta property="og:url" content={structuredData["url"]} />
           <meta property="og:type" content="website" />
+          <meta property="og:image" content={structuredData["image"]} />
+          <meta name="twitter:image" content={structuredData["image"]} />
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:site" content={structuredData["url"]} />
           <meta name="twitter:title" content={structuredData["name"]} />
