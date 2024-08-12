@@ -2,7 +2,7 @@
   CyberPunk Portfolio - v0.2
 </h2>
 <div align="center">
-  <img alt="Demo" src="./Images/readme-img1.png" />
+  <img alt="Demo" src="./demo.png" />
 </div>
 
 <br/>
