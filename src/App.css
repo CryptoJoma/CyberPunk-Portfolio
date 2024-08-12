@@ -1413,7 +1413,7 @@ a {
     }
 }
 
-@media (min-width:445px) {
+@media (min-width:412px) {
     .xs\:flex {
         display: flex
     }

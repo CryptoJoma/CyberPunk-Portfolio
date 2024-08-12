@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import GitHubProjects from '../components/GitHubProjects'; // Adjust the path as needed
 
@@ -13,8 +14,33 @@ const Projects = () => {
             .catch(error => console.error('Error fetching projects:', error));
     }, []);
 
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Projects - JomaDev",
+      "description": "Here you'll find a showcase of projects I've worked on that I want to share publicly. While I've been involved in many projects, these are the ones I'm most proud of.",
+      "url": "https://joma.dev/projects"
+    };
+
     return (
       <div class="mt-36" style={{opacity: 1, transform: "none"}}>
+        <Helmet>
+          <title>{structuredData["name"]}</title>
+          <meta name="description" content={structuredData["description"]} />
+          <meta name="keywords" content="Joma, CryptoJoma, JomaDev, Portfolio, Web3, Smart Contracts, Blockchain" />
+          <link rel="canonical" href="%PUBLIC_URL%" />
+          <meta property="og:title" content={structuredData["name"]} />
+          <meta property="og:description" content={structuredData["description"]} />
+          <meta property="og:url" content={structuredData["url"]} />
+          <meta property="og:type" content="website" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content={structuredData["url"]} />
+          <meta name="twitter:title" content={structuredData["name"]} />
+          <meta name="twitter:description" content={structuredData["description"]} />
+          <script type="application/ld+json">
+            {JSON.stringify(structuredData)}
+          </script>
+        </Helmet>
         <h1 class="text-black dark:text-white font-bold text-3xl mb-3 mt-8">My <span class="transition-all duration-1000 text-violet-600">Project</span> Portfolio <span class="pl-1" role="img" aria-label="wave">🤖</span></h1>
         <p class="text-gray-800 dark:text-gray-200 mb-6">Here you'll find a showcase of projects I've worked on that I want to share publicly. While I've been involved in many projects, these are the ones I'm most proud of.</p>
         <div class="grid grid-cols-1 md:grid-cols-3 md:gap-4">

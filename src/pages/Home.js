@@ -1,11 +1,38 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Tooltip } from 'react-tippy';
 import 'tippy.js/dist/tippy.css';
 
 const Home = () => {
+
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "JomaDev - Blockchain and Web3",
+    "description": "DevOps Engineer from Mexico with a long-standing passion for coding.",
+    "url": "https://joma.dev"
+  };
+  
     return (
 
   <div class="mt-24 w-full" style={{opacity: 1, transform: "none"}}>
+    <Helmet>
+      <title>{structuredData["name"]}</title>
+      <meta name="description" content={structuredData["description"]} />
+      <meta name="keywords" content="Joma, CryptoJoma, JomaDev, Portfolio, Web3, Smart Contracts, Blockchain" />
+      <link rel="canonical" href="%PUBLIC_URL%" />
+      <meta property="og:title" content={structuredData["name"]} />
+      <meta property="og:description" content={structuredData["description"]} />
+      <meta property="og:url" content={structuredData["url"]} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content={structuredData["url"]} />
+      <meta name="twitter:title" content={structuredData["name"]} />
+      <meta name="twitter:description" content={structuredData["description"]} />
+      <script type="application/ld+json">
+        {JSON.stringify(structuredData)}
+      </script>
+    </Helmet>
     <h1 class="mt-36 font-bold text-4xl md:text-5xl mb-4">Howdy! I'm <span class="transition-all duration-1000 text-violet-600">Joma</span> <span class="text-gray-400 sm:text-base text-sm italic sm:inline flex"> aka CryptoJoma</span><span class="pl-1 WavingEmoji_wave__jGgWQ" role="img" aria-label="wave">👽</span></h1>
     <p class="text-gray-800 dark:text-gray-300 leading-6 tracking-wide mb-12">
       I'm a DevOps Engineer from Mexico with a long-standing passion for coding.

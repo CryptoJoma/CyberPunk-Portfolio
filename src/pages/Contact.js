@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import axios from 'axios';
 import moment from 'moment-timezone';
 
@@ -51,8 +52,33 @@ const Contact = () => {
         setFormData({ ...formData, [name]: value });
     };
 
+    const structuredData = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Contact - JomaDev",
+      "description": "Have a question or want to connect? Drop a message below or reach out via Discord, Telegram, Twitter, or email!",
+      "url": "https://joma.dev/contact"
+    };
+
     return (
       <div class="mt-36 w-full" style={{opacity: 1, transform: "none"}}>
+        <Helmet>
+          <title>{structuredData["name"]}</title>
+          <meta name="description" content={structuredData["description"]} />
+          <meta name="keywords" content="Joma, CryptoJoma, JomaDev, Portfolio, Web3, Smart Contracts, Blockchain" />
+          <link rel="canonical" href="%PUBLIC_URL%" />
+          <meta property="og:title" content={structuredData["name"]} />
+          <meta property="og:description" content={structuredData["description"]} />
+          <meta property="og:url" content={structuredData["url"]} />
+          <meta property="og:type" content="website" />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content={structuredData["url"]} />
+          <meta name="twitter:title" content={structuredData["name"]} />
+          <meta name="twitter:description" content={structuredData["description"]} />
+          <script type="application/ld+json">
+            {JSON.stringify(structuredData)}
+          </script>
+        </Helmet>
         <h1 class="text-black dark:text-white font-bold text-3xl mb-3 mt-8">Let's <span class="transition-all duration-1000 text-violet-600">Chat</span> <span class="pl-1" role="img" aria-label="wave">💬</span></h1>
         <p class="text-gray-800 dark:text-gray-200 mb-6">Have a question or want to connect? Drop a message below or reach out via Discord, Telegram, Twitter, or email!</p>
         <p class="text-black/50 dark:text-white/50 text-sm mb-10">It's currently <span class="font-semibold text-black/60 dark:text-white/60"> {now.format('h:mm A')}</span> for me, so I’m likely <span class="font-semibold text-black/60 dark:text-white/60">{current_status}</span> and will respond as soon as I can!</p>
