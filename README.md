@@ -1,9 +1,6 @@
 <h2 align="center">
   CyberPunk Portfolio - v0.2
 </h2>
-<div align="center">
-  <img alt="Demo" src="./demo.png" />
-</div>
 
 <br/>
 
